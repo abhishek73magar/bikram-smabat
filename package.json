@@ -6,9 +6,10 @@
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.json && tsup",
     "npm:build": "vitest run && tsup",
-    "test": "vitest"
+    "test": "vitest",
+    "prepublishOnly": "npm run npm:build"
   },
   "repository": {
     "type": "git",
@@ -30,5 +31,8 @@
     "tsup": "^8.4.0",
     "typescript": "^5.8.2",
     "vitest": "^3.1.1"
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }
